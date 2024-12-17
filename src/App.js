@@ -52,7 +52,7 @@ function App() {
         </div>
       )}
       {isMapShow ? (
-        <Map persons={persons} map={map} setMap={setMap} />
+        <Map map={map} setMap={setMap} />
       ) : (
         <PersonsSelector map={map} persons={persons} setPersons={setPersons} />
       )}
