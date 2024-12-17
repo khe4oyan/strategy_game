@@ -10,12 +10,12 @@ import AttackModule from '../modules/AttackModule';
 
 class JellyfishPerson extends IPerson {
   constructor(map_ref, i, j) {
-    const modules = [
+    super("Jellyfish", [], iconImg, 80, map_ref, i, j);
+
+    this.modules = [
       new MoveModule(this, 2),
       new AttackModule(this, 75, 3),
     ];
-    
-    super("Jellyfish", modules, iconImg, 80, map_ref, i, j);
   }
 }
 

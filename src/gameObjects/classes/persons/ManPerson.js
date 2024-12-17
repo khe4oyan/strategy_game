@@ -10,12 +10,12 @@ import AttackModule from '../modules/AttackModule';
 
 class ManPerson extends IPerson {
   constructor(map_ref, i, j) {
-    const modules = [
+    super("Man", [], iconImg, 100, map_ref, i, j);
+  
+    this.modules = [
       new MoveModule(this, 3),
       new AttackModule(this, 25, 5),
     ];
-    
-    super("Man", modules, iconImg, 100, map_ref, i, j);
   }
 }
 

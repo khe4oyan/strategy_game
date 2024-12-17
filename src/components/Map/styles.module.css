@@ -1,1 +1,8 @@
-.root {}
+/* .root {} */
+.map {
+  --squareSize: 90px;
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 2px;
+  width: fit-content;
+}

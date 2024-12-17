@@ -9,3 +9,10 @@ body {
   min-height: 100dvh;
   padding: 10px;
 }
+
+button {
+  border: none;
+  cursor: pointer;
+  background: none;
+  outline: none;
+}
