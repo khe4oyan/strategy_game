@@ -10,33 +10,33 @@ import PersonsSelector from "./components/PersonsSelector";
 import "./app.css";
 
 const mapInit = () => {
-	const map = [];
-	const size = 8;
-	for (let i = 0; i < size; ++i) {
-		const line = [];
-		for (let j = 0; j < size; ++j) {
-			line.push(null);
-		}
-		map.push(line);
-	}
-	return map;
-}
+  const map = [];
+  const size = 8;
+  for (let i = 0; i < size; ++i) {
+    const line = [];
+    for (let j = 0; j < size; ++j) {
+      line.push(null);
+    }
+    map.push(line);
+  }
+  return map;
+};
 
 function App() {
-	const [isMapShow, setIsMapShow] = useState(false);
+  const [isMapShow, setIsMapShow] = useState(false);
   const [map, setMap] = useState(mapInit());
   const [persons, setPersons] = useState([]);
 
-	useEffect(() => {
-		if (isMapShow === false) {
-			return;
-		}
+  useEffect(() => {
+    if (isMapShow === false) {
+      return;
+    }
 
-    setMap(prev => {
+    setMap(() => {
       const newMap = mapInit();
 
       for (const person of persons) {
-        const {i, j} = person;
+        const { i, j } = person;
         newMap[i][j] = person;
       }
 
@@ -46,14 +46,16 @@ function App() {
 
   return (
     <div>
-			<div>
-				<button onClick={() => setIsMapShow(prev => !prev)}>TOGGLE</button>
-			</div>
-			{
-				isMapShow ? 
-				<Map persons={persons} map={map} setMap={setMap} />:
-				<PersonsSelector map={map} persons={persons} setPersons={setPersons} />
-			}
+      {!isMapShow && (
+        <div>
+          <button onClick={() => setIsMapShow((prev) => !prev)}>TOGGLE</button>
+        </div>
+      )}
+      {isMapShow ? (
+        <Map persons={persons} map={map} setMap={setMap} />
+      ) : (
+        <PersonsSelector map={map} persons={persons} setPersons={setPersons} />
+      )}
     </div>
   );
 }
