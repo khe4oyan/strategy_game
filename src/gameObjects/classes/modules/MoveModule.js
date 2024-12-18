@@ -4,7 +4,7 @@ import iconImg from '../../../assets/modules/move.png';
 class MoveModule extends IModule {
   radius;
 
-  constructor(person_ref, radius) {
+  constructor(person_ref, radius = 1) {
     super("Move", person_ref, iconImg);
     this.radius = radius;
   }

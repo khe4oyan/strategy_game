@@ -1,14 +1,18 @@
+// libs
+import { useRef, useState } from "react";
+
 // components
-import PersonCard from "../PersonCard";
+import PersonCard from "../../components/PersonCard";
 
 // data
 import personsData from "../../data/personsData";
 
 // styles
-import classes from "./styles.module.css";
-import { useRef } from "react";
+import classes from './styles.module.css';
 
-export default function PersonsSelector({ map, persons, setPersons }) {
+export default function PersonChoosingPage({map}) {
+  const [persons, setPersons] = useState([]);
+  
   const personsExamples = [];
   let iCount = useRef(0);
 
@@ -57,5 +61,5 @@ export default function PersonsSelector({ map, persons, setPersons }) {
         ))}
       </div>
     </div>
-  );
+  )
 }

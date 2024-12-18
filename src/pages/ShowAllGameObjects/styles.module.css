@@ -1,0 +1,74 @@
+.root {}
+.modules,
+.persons {
+  display: flex;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.modules {
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.module {
+  border: 1px solid rgb(195, 195, 195);
+  padding: 5px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 10px;
+}
+.moduleTitle {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 5px;
+}
+.moduleImg {
+  width: 60px;
+}
+.moduleInfo {
+  border-left: 1px solid rgb(195, 195, 195);
+  padding-left: 10px;
+}
+
+.persons {
+  flex-direction: column;
+}
+
+.person {
+  border: 1px solid rgb(195, 195, 195);
+  padding: 10px;
+  border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr 70%;
+  max-width: 500px;
+}
+.personName {
+  font-weight: bold;
+  text-align: center;
+}
+.personImg {
+  width: 100%;
+}
+.personInfo {
+  border-left: 1px solid rgb(195, 195, 195);
+  padding: 0 10px 0 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.personModules {
+  display: flex;
+  gap: 3px;
+}
+
+.personModuleImg {
+  --size: 40px;
+  width: var(--size);
+  height: var(--size);
+  border-radius: 5px;
+  padding: 3px;
+  border: 1px solid rgb(210, 210, 210);
+}

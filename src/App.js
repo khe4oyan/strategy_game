@@ -1,61 +1,27 @@
 // libs
-import { useEffect } from "react";
-import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 
-// components
-import Map from "./components/Map";
-import PersonsSelector from "./components/PersonsSelector";
+// pages
+import HomePage from './pages/HomePage';
+import PersonChoosingPage from './pages/PersonChoosingPage';
+import ShowAllGameObjects from "./pages/ShowAllGameObjects";
+import NotFoundPage from './pages/NotFoundPage';
+
+// data
+import routes from './data/routes';
 
 // styles
 import "./app.css";
 
-const mapInit = () => {
-  const map = [];
-  const size = 8;
-  for (let i = 0; i < size; ++i) {
-    const line = [];
-    for (let j = 0; j < size; ++j) {
-      line.push(null);
-    }
-    map.push(line);
-  }
-  return map;
-};
-
 function App() {
-  const [isMapShow, setIsMapShow] = useState(false);
-  const [map, setMap] = useState(mapInit());
-  const [persons, setPersons] = useState([]);
-
-  useEffect(() => {
-    if (isMapShow === false) {
-      return;
-    }
-
-    setMap(() => {
-      const newMap = mapInit();
-
-      for (const person of persons) {
-        const { i, j } = person;
-        newMap[i][j] = person;
-      }
-
-      return newMap;
-    });
-  }, [isMapShow]);
-
   return (
     <div>
-      {!isMapShow && (
-        <div>
-          <button onClick={() => setIsMapShow((prev) => !prev)}>TOGGLE</button>
-        </div>
-      )}
-      {isMapShow ? (
-        <Map map={map} setMap={setMap} />
-      ) : (
-        <PersonsSelector map={map} persons={persons} setPersons={setPersons} />
-      )}
+      <Routes>
+        <Route path={routes.HOME} element={<HomePage />}/>
+        <Route path={routes.PERSON_CHOOSING} element={<PersonChoosingPage />}/>
+        <Route path={routes.SHOW_ALL_GAME_OBJECTS} element={<ShowAllGameObjects />}/>
+        <Route path={routes.NOT_FOUND} element={<NotFoundPage />}/>
+      </Routes>
     </div>
   );
 }
