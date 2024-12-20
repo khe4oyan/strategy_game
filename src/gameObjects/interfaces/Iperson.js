@@ -1,24 +1,20 @@
-class IPerson {
+// interface
+import IGameObject from './IGameObject';
+
+class IPerson extends IGameObject{
   name;
   modules;
-  img;
   hp;
   isDead;
-  map_ref;
   specialData;
-  i;
-  j;
 
   constructor(name, modules, img, hp, map_ref, i, j) {
+    super(img, i, j, map_ref);
     this.name = name;
     this.modules = modules;
-    this.img = img;
     this.hp = hp;
     this.isDead = false;
-    this.map_ref = map_ref;
     this.specialData = new Map();
-    this.i = i;
-    this.j = j;
   }
 
   // basic reactions

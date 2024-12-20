@@ -18,33 +18,34 @@ export default function ShowAllGameObjects() {
     personsExamples.push(new personData());
   }
 
-  const randomNumber = () => {
-    return Math.floor(Math.random() * 10);
-  };
+  // local component
+  const ModuleExample = ({ example }) => {
+    return (<div className={classes.module}>
+      <div>
+        <p className={classes.moduleTitle}>{example.title}</p>
+        <img
+          src={example.img}
+          alt="module_img"
+          className={classes.moduleImg}
+        />
+      </div>
+      <div className={classes.moduleInfo}>
+        {example.radius && (
+          <p>Radius: {example.radius}</p>
+        )}
+        {example.attack && (
+          <p>Damage: {example.attack}</p>
+        )}
+      </div>
+    </div>)
+  }
 
   return (
     <div className={classes.root}>
       <h2>All Modules</h2>
       <div className={classes.modules}>
         {modulesExamples.map((example, i) => (
-          <div key={i} className={classes.module}>
-            <div>
-              <p className={classes.moduleTitle}>{example.title}</p>
-              <img
-                src={example.img}
-                alt="module_img"
-                className={classes.moduleImg}
-              />
-            </div>
-            <div className={classes.moduleInfo}>
-              {example.radius && (
-                <p>Radius: {example.radius + randomNumber()}</p>
-              )}
-              {example.attack && (
-                <p>Damage: {example.attack + randomNumber()}</p>
-              )}
-            </div>
-          </div>
+          <ModuleExample key={i} example={example}/>
         ))}
       </div>
 
@@ -67,12 +68,7 @@ export default function ShowAllGameObjects() {
               </div>
               <div className={classes.personModules}>
                 {example.modules.map((moduleData, i) => (
-                  <img
-                    key={i}
-                    src={moduleData.img}
-                    alt="module_image"
-                    className={classes.personModuleImg}
-                  />
+                  <ModuleExample key={i} example={moduleData}/>
                 ))}
               </div>
             </div>
