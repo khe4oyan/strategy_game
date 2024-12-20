@@ -21,7 +21,7 @@ export default function ShowAllGameObjects() {
   // local component
   const ModuleExample = ({ example }) => {
     return (<div className={classes.module}>
-      <div>
+      <div className={classes.moduleImgBox}>
         <p className={classes.moduleTitle}>{example.title}</p>
         <img
           src={example.img}

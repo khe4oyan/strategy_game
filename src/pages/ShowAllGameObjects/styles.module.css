@@ -19,6 +19,11 @@
   flex-direction: column;
   gap: 10px;
 }
+.moduleImgBox {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .moduleTitle {
   font-weight: bold;
   text-align: center;
@@ -26,7 +31,6 @@
 }
 .moduleImg {
   width: 60px;
-  margin: auto;
 }
 /* .moduleInfo {} */
 
@@ -58,12 +62,29 @@
 }
 
 .personModules {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  flex-wrap: wrap;
+  max-height: 200px;
+  overflow-y: auto;
   gap: 3px;
 }
 
-.person .moduleImg {
-  --size: 40px;
-  width: var(--size);
-  height: var(--size);
+.person{
+  .module {
+    flex-direction: row;
+  }
+  .moduleTitle {
+    font-weight: unset;
+  }
+  .moduleImg {
+    --size: 45px;
+    width: var(--size);
+    height: var(--size);
+  }
+  .moduleInfo {
+    border-left: 1px solid rgb(195, 195, 195);
+    padding-left: 10px;
+    font-size: 14px;
+  }
 }
