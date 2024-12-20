@@ -43,7 +43,7 @@
   padding: 10px;
   border-radius: 5px;
   display: grid;
-  grid-template-columns: 1fr 70%;
+  grid-template-columns: 1fr 80%;
   max-width: 800px;
 }
 .personName {

@@ -20,24 +20,26 @@ export default function ShowAllGameObjects() {
 
   // local component
   const ModuleExample = ({ example }) => {
-    return (<div className={classes.module}>
-      <div className={classes.moduleImgBox}>
-        <p className={classes.moduleTitle}>{example.title}</p>
-        <img
-          src={example.img}
-          alt="module_img"
-          className={classes.moduleImg}
-        />
+    return (
+      <div className={classes.module}>
+        <div className={classes.moduleImgBox}>
+          <p className={classes.moduleTitle}>{example.title}</p>
+          <img
+            src={example.img}
+            alt="module_img"
+            className={classes.moduleImg}
+          />
+        </div>
+        <div className={classes.moduleInfo}>
+          {example.radius && (
+            <p>Radius: {example.radius}</p>
+          )}
+          {example.attack && (
+            <p>Damage: {example.attack}</p>
+          )}
+        </div>
       </div>
-      <div className={classes.moduleInfo}>
-        {example.radius && (
-          <p>Radius: {example.radius}</p>
-        )}
-        {example.attack && (
-          <p>Damage: {example.attack}</p>
-        )}
-      </div>
-    </div>)
+    )
   }
 
   return (
