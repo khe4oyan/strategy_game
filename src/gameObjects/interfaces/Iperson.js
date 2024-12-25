@@ -4,6 +4,7 @@ import IGameObject from './IGameObject';
 class IPerson extends IGameObject{
   name;
   modules;
+  _maxhp;
   hp;
   isDead;
   specialData;
@@ -12,6 +13,7 @@ class IPerson extends IGameObject{
     super(img, i, j, map_ref);
     this.name = name;
     this.modules = modules;
+    this._maxhp = hp;
     this.hp = hp;
     this.isDead = false;
     this.specialData = new Map();

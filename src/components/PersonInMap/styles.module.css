@@ -1,1 +1,23 @@
-.root {}
+.root {
+  --size: 100%;
+  --healHeight: 7px;
+
+  position: relative;
+  width: var(--size);
+  height: var(--size);
+  padding: 5px;
+}
+
+.heal {
+  width: 80%;
+  margin: auto;
+  border-radius: var(--healHeight);
+  height: var(--healHeight);
+  border: 1px solid rgb(117, 117, 117);
+}
+
+.img {
+  height: calc(100% - var(--healHeight));
+  width: 100%;
+  object-fit: cover;
+}

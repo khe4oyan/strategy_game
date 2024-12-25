@@ -8,8 +8,8 @@ export default function MapSquare({ data }) {
   return (
     <div className={classes.root}>
       {
-        data &&
-        <PersonInMap data={data}/>
+        data.person &&
+        <PersonInMap data={data.person}/>
       }
     </div>
   )

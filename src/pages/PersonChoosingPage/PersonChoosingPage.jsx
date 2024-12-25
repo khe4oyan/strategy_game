@@ -45,8 +45,9 @@ export default function PersonChoosingPage({ map }) {
 
   const addPerson = (classInd) => {
     if (iCount.current > 3) {return;}
+    ++iCount.current;
 
-    const person = new personsData[classInd](map, iCount.current++, 0);
+    const person = new personsData[classInd](map, 0, 0);
     setPersons(prev => [person, ...prev]);
   };
 

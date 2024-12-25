@@ -10,9 +10,7 @@ const store = configureStore({
   },
   middleware: (getDefaultMiddleware) => {
     return getDefaultMiddleware({
-      serializableCheck: {
-        ignoredActionPaths: ["payload"],
-      },
+      serializableCheck: false,
     });
   }
 });
