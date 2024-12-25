@@ -1,17 +1,26 @@
 // libs
 import { useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
 
 // components
 import PersonCard from "../../components/PersonCard";
 
+// slices
+import { addPersons } from '../../store/slices/mapSlice';
+
 // data
 import personsData from "../../data/personsData";
+import routes from '../../data/routes';
 
 // styles
 import classes from './styles.module.css';
 
-export default function PersonChoosingPage({map}) {
+export default function PersonChoosingPage({ map }) {
   const [persons, setPersons] = useState([]);
+
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
   
   const personsExamples = [];
   let iCount = useRef(0);
@@ -35,14 +44,23 @@ export default function PersonChoosingPage({map}) {
   };
 
   const addPerson = (classInd) => {
-    if (iCount.current > 7) {return;}
+    if (iCount.current > 3) {return;}
 
     const person = new personsData[classInd](map, iCount.current++, 0);
     setPersons(prev => [person, ...prev]);
   };
 
+  const playButton = () => {
+    if (persons.length > 0) {
+      dispatch(addPersons(persons));
+      navigate(routes.PLAY);
+    }
+  };
+
   return (
     <div className={classes.root}>
+      <button onClick={playButton}>Play</button>
+
       <h2>Selected Persons</h2>
       <div className={classes.selectedPersons}>
         {persons.map((person, i) => (

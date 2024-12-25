@@ -1,4 +1,4 @@
-class GameObject {
+class IGameObject {
   map_ref;
   img;
   i;
@@ -12,4 +12,4 @@ class GameObject {
   }
 }
 
-export default GameObject;
+export default IGameObject;

@@ -22,8 +22,11 @@ const mapSlice = createSlice({
   },
 
   reducers: {
-    
+    addPersons(state, action) {
+      
+    },
   },
 });
 
+export const { addPersons } = mapSlice.actions;
 export default mapSlice.reducer;
