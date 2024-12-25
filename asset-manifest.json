@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/strategy_game/static/css/main.896a3dba.css",
+    "main.js": "/strategy_game/static/js/main.e6af5084.js",
+    "static/media/rock.png": "/strategy_game/static/media/rock.d674fee019b49a25eddd.png",
+    "static/media/jellyfish.png": "/strategy_game/static/media/jellyfish.f008da05037be4436934.png",
+    "static/media/man.png": "/strategy_game/static/media/man.4a7d98d23f8413f23e6f.png",
+    "static/media/attack.png": "/strategy_game/static/media/attack.78cb283fdfab6fdd1cf8.png",
+    "static/media/move.png": "/strategy_game/static/media/move.7a5be3f12b85fcea56e0.png",
+    "index.html": "/strategy_game/index.html",
+    "main.896a3dba.css.map": "/strategy_game/static/css/main.896a3dba.css.map",
+    "main.e6af5084.js.map": "/strategy_game/static/js/main.e6af5084.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.896a3dba.css",
+    "static/js/main.e6af5084.js"
+  ]
+}
