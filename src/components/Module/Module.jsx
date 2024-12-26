@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 // slices
 import { deactiveAllActiveSquares } from '../../store/slices/mapSlice';
 import { moduleIndSelect, moduleIndDeselect } from '../../store/slices/selectedModuleSlice';
-import { showActiveSquares, updateMap } from '../../store/slices/mapSlice';
+import { showActiveSquares } from '../../store/slices/mapSlice';
 
 // styles
 import classes from './styles.module.css';

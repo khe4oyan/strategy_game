@@ -27,6 +27,12 @@ class IPerson extends IGameObject{
   }
   afterAttack() {}
   afterTakeDamage() {}
+  damage(damage) {
+    this.hp -= damage;
+    if (this.hp < 1) {
+      this.isDead = true;
+    }
+  }
 
   // special data
   setSpecialData(key, value) {
