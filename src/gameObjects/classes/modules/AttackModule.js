@@ -28,7 +28,11 @@ class AttackModule extends IModule{
     this.recursionSetActive(map_ref, i, j + 1, radius - 1);
     this.recursionSetActive(map_ref, i, j - 1, radius - 1);
 
-    if (map_ref[i][j].person !== null && !map_ref[i][j].person.isDead) {
+    if (
+      map_ref[i][j].person !== null &&
+      !map_ref[i][j].person.isDead &&
+      map_ref[i][j].person !== this.person_ref
+    ) {
       map_ref[i][j].isActiveSquare = true;
     }
 

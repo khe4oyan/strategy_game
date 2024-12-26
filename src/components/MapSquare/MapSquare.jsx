@@ -32,6 +32,9 @@ export default function MapSquare({ squareData }) {
     if (selectedModuleInd < 0) {
       if (squarePerson !== null) {
         // если в квадрате персонаж сделать его активным и обнулить выбранный модуль
+        if (squarePerson.isDead) {
+          return;
+        }
         dispatch(personSelect({ i: squareI, j: squareJ }));
       } else {
         dispatch(personDeselect());

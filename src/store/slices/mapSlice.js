@@ -51,8 +51,8 @@ const mapSlice = createSlice({
       const persons = action.payload;
 
       for (let i = 0; i < persons.length; ++i) {
-        persons[i].i = i;
-        state.map[i][0].person = persons[i];
+        persons[i].i = i + 2;
+        state.map[i + 2][0].person = persons[i];
       }
     },
   },
