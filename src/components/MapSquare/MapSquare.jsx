@@ -4,12 +4,12 @@ import PersonInMap from '../PersonInMap';
 // styles
 import classes from './styles.module.css';
 
-export default function MapSquare({ data }) {
+export default function MapSquare({ squareData }) {
   return (
     <div className={classes.root}>
       {
-        data.person &&
-        <PersonInMap data={data.person}/>
+        squareData.person &&
+        <PersonInMap personData={squareData.person}/>
       }
     </div>
   )

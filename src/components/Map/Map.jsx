@@ -15,7 +15,7 @@ export default function Map() {
       <div className={classes.map}>
         {map.map((line, i) =>
           line.map((squareData, j) => (
-            <MapSquare data={squareData} key={`${i}${j}`} />
+            <MapSquare squareData={squareData} key={`${i}${j}`} />
           ))
         )}
       </div>
