@@ -10,12 +10,38 @@ class MoveModule extends IModule {
   }
 
   actionWhenSelect(map_ref) {
-    // позиция персонажа
-    // посчитать позиции на карте где нужно показать активные клетки
+    this.recursionSetActive(map_ref, this.person_ref.i, this.person_ref.j, this.radius);
+  }
+  
+  recursionSetActive(map_ref, i, j, radius) {
+    if (
+      this.person_ref.isMapOverflow(i, j) ||
+      radius < 0 ||
+      ((this.person_ref !== map_ref[i][j].person) && map_ref[i][j].person !== null)
+    ) {
+      return;
+    }
+
+    this.recursionSetActive(map_ref, i + 1, j, radius - 1);
+    this.recursionSetActive(map_ref, i - 1, j, radius - 1);
+    this.recursionSetActive(map_ref, i, j + 1, radius - 1);
+    this.recursionSetActive(map_ref, i, j - 1, radius - 1);
+
+    if (map_ref[i][j].person === null) {
+      map_ref[i][j].isActiveSquare = true;
+    }
+
+    if (i === this.person_ref.i && j === this.person_ref.j) {
+      return;
+    }
   }
 
   actionWhenUse(map_ref, {i, j}) {
-    // выполнить перемещение по указанным координатам
+    const person = map_ref[this.person_ref.i][this.person_ref.j].person;
+    map_ref[this.person_ref.i][this.person_ref.j].person = null;
+    map_ref[i][j].person = person;
+    person.i = i;
+    person.j = j;
   }
 }
 

@@ -14,7 +14,7 @@ class IModule {
    * @param map_ref - передать мир
    */
   actionWhenSelect(map_ref) {
-    console.warn("Implement actionWhenSelect for IModule instance");
+    console.error("Implement actionWhenSelect for IModule instance");
   }
 
   /**
@@ -24,7 +24,7 @@ class IModule {
    * @param j
    */
   actionWhenUse(map_ref, {i, j}) {
-    console.warn("Implement actionWhenUse for IModule instance");
+    console.error("Implement actionWhenUse for IModule instance");
   }
 
   /**

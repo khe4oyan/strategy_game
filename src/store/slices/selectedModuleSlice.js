@@ -8,7 +8,7 @@ const selectedModuleSlice = createSlice({
   },
 
   reducers: {
-    moduelIndSelect(state, action) {
+    moduleIndSelect(state, action) {
       state.selectedModuleInd = action.payload;
     },
 
@@ -18,5 +18,5 @@ const selectedModuleSlice = createSlice({
   }
 });
 
-export const { moduelIndSelect, moduleIndDeselect } = selectedModuleSlice.actions;
+export const { moduleIndSelect, moduleIndDeselect } = selectedModuleSlice.actions;
 export default selectedModuleSlice.reducer;

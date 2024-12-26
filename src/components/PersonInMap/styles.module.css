@@ -6,6 +6,8 @@
   width: var(--size);
   height: var(--size);
   padding: 5px;
+
+  cursor: pointer;
 }
 
 .heal {

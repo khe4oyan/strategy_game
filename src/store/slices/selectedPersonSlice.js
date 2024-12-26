@@ -15,6 +15,7 @@ const selectedPersonSlice = createSlice({
       state.personJ = action.payload.j;
       state.personIsSelected = true;
     },
+    
     personDeselect(state) {
       state.personI = -1;
       state.personJ = -1;

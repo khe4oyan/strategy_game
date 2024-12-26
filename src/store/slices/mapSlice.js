@@ -1,32 +1,24 @@
 // libs
 import { createSlice } from "@reduxjs/toolkit";
 
-// for tests
-import ManPerson from '../../gameObjects/classes/persons/ManPerson';
-import JellyfishPerson from '../../gameObjects/classes/persons/JellyfishPerson';
-import RockPerson from '../../gameObjects/classes/persons/RockPerson';
-
 const mapInit = () => {
   const map = [];
   const size = 8;
   for (let i = 0; i < size; ++i) {
     const line = [];
+
     for (let j = 0; j < size; ++j) {
       line.push({
         i, 
         j,
         person: null,
+        isActiveSquare: false,
       });
     }
+
     map.push(line);
   }
 
-  // TESTS ZONE
-  map[0][0].person = new ManPerson(map, 0, 0);
-  map[1][0].person = new JellyfishPerson(map, 1, 0);
-  map[4][0].person = new RockPerson(map, 4, 0);
-  // END TESTS ZONE
-  
   return map;
 };
 
@@ -38,6 +30,23 @@ const mapSlice = createSlice({
   },
 
   reducers: {
+    updateMap(state, action) {
+      const {moduleUse, args } = action.payload;
+      moduleUse(state.map, args);
+    }, 
+
+    showActiveSquares(state, action) {
+      action.payload(state.map);
+    },
+
+    deactiveAllActiveSquares(state) {
+      for (let i = 0; i < state.map.length; ++i) {
+        for (let j = 0; j < state.map[i].length; ++j) {
+          state.map[i][j].isActiveSquare = false;
+        }
+      }
+    },
+
     addPersons(state, action) {
       const persons = action.payload;
 
@@ -49,5 +58,5 @@ const mapSlice = createSlice({
   },
 });
 
-export const { addPersons } = mapSlice.actions;
+export const { updateMap, showActiveSquares, deactiveAllActiveSquares, addPersons } = mapSlice.actions;
 export default mapSlice.reducer;

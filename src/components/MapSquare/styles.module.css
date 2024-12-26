@@ -3,3 +3,11 @@
   height: var(--squareSize);
   background-color: rgb(202, 202, 202);
 }
+
+.rootActive {
+  background-color: rgb(197, 237, 194);
+}
+
+.selectedPerson {
+  box-shadow: inset 0px 0px 0px 5px rgb(103, 129, 133);
+}

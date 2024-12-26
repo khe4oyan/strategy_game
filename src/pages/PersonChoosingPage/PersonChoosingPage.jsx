@@ -1,7 +1,7 @@
 // libs
 import { useRef, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 
 // components
 import PersonCard from "../../components/PersonCard";
@@ -16,8 +16,10 @@ import routes from '../../data/routes';
 // styles
 import classes from './styles.module.css';
 
-export default function PersonChoosingPage({ map }) {
+export default function PersonChoosingPage() {
   const [persons, setPersons] = useState([]);
+  const { map } = useSelector(s => s.mapSlice);
+  
 
   const navigate = useNavigate();
   const dispatch = useDispatch();
