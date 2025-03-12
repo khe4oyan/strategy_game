@@ -9,7 +9,7 @@ export default function ShowAllGameObjects() {
   // создать экземпляры всех модулей
   const modulesExamples = [];
   for (const key in modulesData) {
-    modulesExamples.push(new modulesData[key]());
+    modulesExamples.push(new modulesData[key](null, 1));
   }
 
   // создать экземпляры всех персонажев
@@ -36,6 +36,9 @@ export default function ShowAllGameObjects() {
           )}
           {example.attack && (
             <p>Damage: {example.attack}</p>
+          )}
+          {example.cooldownConst && (
+            <p>Cooldown: {example.cooldownConst}</p>
           )}
         </div>
       </div>

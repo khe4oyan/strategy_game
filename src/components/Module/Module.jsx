@@ -16,11 +16,18 @@ export default function Module({ moduleData, isActiveModule, moduleInd, map_ref 
     img, 
     attack, 
     radius, 
+    cooldownConst,
+    cooldownCurrent,
   } = moduleData;
 
   const dispatch = useDispatch();
 
   const moduleClick = () => {
+    // проверить есть ли кулл даун или нет
+    if (cooldownCurrent !== undefined && cooldownCurrent !== 0) {
+      return;
+    }
+
     // удалить все активированные клетки
     dispatch(deactiveAllActiveSquares());
 
@@ -38,11 +45,16 @@ export default function Module({ moduleData, isActiveModule, moduleInd, map_ref 
 
   return (
     <button onClick={moduleClick} className={`${classes.root} ${isActiveModule && classes.rootActive}`}>
+      {
+        moduleData?.cooldownCurrent > 0 && 
+        <div className={classes.cooldown}>{ cooldownCurrent }</div>
+      }
       <img src={img} alt="skill" className={classes.img}/>
       <div className={classes.info}>
         <p className={classes.title}>{title}</p>
         { radius && <p>Radius: {radius}</p>}
         { attack && <p>Damage: {attack}</p>}
+        { cooldownConst && <p>Cooldown: {cooldownConst}</p>}
       </div>
     </button>
   )

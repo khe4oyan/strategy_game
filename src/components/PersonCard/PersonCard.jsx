@@ -12,8 +12,9 @@ export default function PersonCard({ data }) {
           <div key={i} className={classes.module}>
             <img src={module.img} alt="module" className={classes.moduleImg} />
             <p>{module.title}</p>
-            <p>Р:{module.radius}</p>
-            {module?.attack && <p>У:{module.attack}</p>}
+            {module?.radius && <p>R:{module.radius}</p>}
+            {module?.attack && <p>A:{module.attack}</p>}
+            {module?.cooldownConst && <p>CD:{module.cooldownConst}</p>}
           </div>
         ))}
       </div>

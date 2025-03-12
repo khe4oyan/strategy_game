@@ -4,10 +4,11 @@ Demo: https://khe4oyan.github.io/strategy_game/
 #  Plans:
 ##  Skills: 
 - Vampirism
-- Resurrection
-- Teleport
-- Attraction/Repulsion
+- Resurrection (воскрешение)
+- Attraction/Repulsion (притяжение/отталкивание)
 - Smoke
+- Heal
 
 
 ##  Persons: 
+- Chess King (can buy some figure)

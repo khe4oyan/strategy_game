@@ -7,7 +7,7 @@ import PersonInMap from '../PersonInMap';
 // slices
 import { personSelect, personDeselect } from '../../store/slices/selectedPersonSlice';
 import { moduleIndDeselect } from '../../store/slices/selectedModuleSlice';
-import { updateMap, deactiveAllActiveSquares } from '../../store/slices/mapSlice';
+import { updateMap, deactiveAllActiveSquares, updateMapAfterMove } from '../../store/slices/mapSlice';
 
 // styles
 import classes from './styles.module.css';
@@ -62,6 +62,9 @@ export default function MapSquare({ squareData }) {
 
         // деактивировать активого персонажа
         dispatch(personDeselect());
+        
+        // после каждого хода
+        dispatch(updateMapAfterMove());
       } else {
         // если квадрат не активный сбросить выбранный модуль
         dispatch(moduleIndDeselect());

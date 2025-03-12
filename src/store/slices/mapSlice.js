@@ -55,8 +55,18 @@ const mapSlice = createSlice({
         state.map[i + 2][0].person = persons[i];
       }
     },
+
+    updateMapAfterMove(state) {
+      for (let i = 0; i < state.map.length; ++i) {
+        for (let j = 0; j < state.map[i].length; ++j) {
+          if (state.map[i][j].person !== null) {
+            state.map[i][j].person.afterMove();
+          }
+        }
+      }
+    }
   },
 });
 
-export const { updateMap, showActiveSquares, deactiveAllActiveSquares, addPersons } = mapSlice.actions;
+export const { updateMap, showActiveSquares, deactiveAllActiveSquares, addPersons, updateMapAfterMove } = mapSlice.actions;
 export default mapSlice.reducer;

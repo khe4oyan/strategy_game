@@ -23,7 +23,10 @@ export default function PersonInMap({ personData }) {
         </>
       ) : (
         <>
-          <div className={classes.heal} style={healStyles}></div>
+          {
+            personData._maxhp !== Infinity &&
+            <div className={classes.heal} style={healStyles}></div>
+          }
           <img src={personData.img} alt="person" className={classes.img} />
         </>
       )}
