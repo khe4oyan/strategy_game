@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/strategy_game/static/css/main.bbdc4318.css",
-    "main.js": "/strategy_game/static/js/main.fcf04724.js",
+    "main.css": "/strategy_game/static/css/main.bf67ec48.css",
+    "main.js": "/strategy_game/static/js/main.d921ec77.js",
     "static/media/RIP.png": "/strategy_game/static/media/RIP.4166bf416edc71dbf44e.png",
+    "static/media/teleport.png": "/strategy_game/static/media/teleport.00cc5994086db1b9c138.png",
     "static/media/rock.png": "/strategy_game/static/media/rock.d674fee019b49a25eddd.png",
     "static/media/jellyfish.png": "/strategy_game/static/media/jellyfish.f008da05037be4436934.png",
     "static/media/man.png": "/strategy_game/static/media/man.4a7d98d23f8413f23e6f.png",
     "static/media/attack.png": "/strategy_game/static/media/attack.78cb283fdfab6fdd1cf8.png",
     "static/media/move.png": "/strategy_game/static/media/move.7a5be3f12b85fcea56e0.png",
     "index.html": "/strategy_game/index.html",
-    "main.bbdc4318.css.map": "/strategy_game/static/css/main.bbdc4318.css.map",
-    "main.fcf04724.js.map": "/strategy_game/static/js/main.fcf04724.js.map"
+    "main.bf67ec48.css.map": "/strategy_game/static/css/main.bf67ec48.css.map",
+    "main.d921ec77.js.map": "/strategy_game/static/js/main.d921ec77.js.map"
   },
   "entrypoints": [
-    "static/css/main.bbdc4318.css",
-    "static/js/main.fcf04724.js"
+    "static/css/main.bf67ec48.css",
+    "static/js/main.d921ec77.js"
   ]
 }
