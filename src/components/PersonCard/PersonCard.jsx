@@ -15,6 +15,7 @@ export default function PersonCard({ data }) {
             {module?.radius && <p>R:{module.radius}</p>}
             {module?.attack && <p>A:{module.attack}</p>}
             {module?.heal && <p>H:{module.heal}</p>}
+            {module?.blood && <p>B:{module.blood}</p>}
             {module?.cooldownConst && <p>CD:{module.cooldownConst}</p>}
           </div>
         ))}
