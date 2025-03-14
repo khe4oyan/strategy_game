@@ -4,7 +4,7 @@ import iconImg from '../../../assets/modules/potion.png';
 class PotionModule extends IModuleCooldown{
   heal;
 
-  constructor(person_ref, heal = 10, cooldown = 2) {
+  constructor(person_ref, heal = 10, cooldown = 1) {
     super("Potion", person_ref, iconImg, cooldown);
     this.heal = heal;
   }
