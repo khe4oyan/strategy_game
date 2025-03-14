@@ -37,6 +37,9 @@ export default function ShowAllGameObjects() {
           {example.attack && (
             <p>Damage: {example.attack}</p>
           )}
+          {example.heal && (
+            <p>Heal: {example.heal}</p>
+          )}
           {example.cooldownConst && (
             <p>Cooldown: {example.cooldownConst}</p>
           )}

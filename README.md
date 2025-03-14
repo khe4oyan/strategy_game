@@ -7,8 +7,6 @@ Demo: https://khe4oyan.github.io/strategy_game/
 - Resurrection (воскрешение)
 - Attraction/Repulsion (притяжение/отталкивание)
 - Smoke
-- Heal
-
 
 ##  Persons: 
 - Chess King (can buy some figure)

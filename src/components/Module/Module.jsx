@@ -18,6 +18,7 @@ export default function Module({ moduleData, isActiveModule, moduleInd, map_ref 
     radius, 
     cooldownConst,
     cooldownCurrent,
+    heal,
   } = moduleData;
 
   const dispatch = useDispatch();
@@ -54,6 +55,7 @@ export default function Module({ moduleData, isActiveModule, moduleInd, map_ref 
         <p className={classes.title}>{title}</p>
         { radius && <p>Radius: {radius}</p>}
         { attack && <p>Damage: {attack}</p>}
+        { heal && <p>Heal: {heal}</p>}
         { cooldownConst && <p>Cooldown: {cooldownConst}</p>}
       </div>
     </button>

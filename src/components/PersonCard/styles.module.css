@@ -9,6 +9,11 @@
   width: 150px;
 }
 
+.name {
+  font-size: 1.1em;
+  font-weight: bold;
+}
+
 .personImg {
   height: 100%;
   width: 100%;

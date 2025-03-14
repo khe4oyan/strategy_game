@@ -4,7 +4,7 @@ import classes from "./styles.module.css";
 export default function PersonCard({ data }) {
   return (
     <div className={classes.root}>
-      <p>{data.name}</p>
+      <p className={classes.name}>{data.name}</p>
       <p>HP:{data.hp}</p>
       <img className={classes.personImg} src={data.img} alt="person" />
       <div className={classes.modules}>
@@ -14,6 +14,7 @@ export default function PersonCard({ data }) {
             <p>{module.title}</p>
             {module?.radius && <p>R:{module.radius}</p>}
             {module?.attack && <p>A:{module.attack}</p>}
+            {module?.heal && <p>H:{module.heal}</p>}
             {module?.cooldownConst && <p>CD:{module.cooldownConst}</p>}
           </div>
         ))}

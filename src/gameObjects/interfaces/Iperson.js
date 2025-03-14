@@ -29,8 +29,12 @@ class IPerson extends IGameObject{
   afterTakeDamage() {}
   damage(damage) {
     this.hp -= damage;
+    
     if (this.hp < 1) {
       this.isDead = true;
+    } else
+    if (this.hp > this._maxhp) {
+      this.hp = this._maxhp;
     }
   }
 

@@ -5,8 +5,8 @@ class AttackModule extends IModule{
   attack;
   radius;
 
-  constructor(preson_ref, attack = 1, radius = 1) {
-    super("Attack", preson_ref, iconImg);
+  constructor(person_ref, attack = 1, radius = 1) {
+    super("Attack", person_ref, iconImg);
     this.attack = attack;
     this.radius = radius;
   }
