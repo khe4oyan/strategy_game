@@ -3,7 +3,7 @@ frontend/node_modules
 frontend/build
 frontend/psd/images
 
-# multer
-multer/node_modules
-multer/outputModules
-multer/outputPersons
+# sharp
+sharp/node_modules
+sharp/outputModules
+sharp/outputPersons
