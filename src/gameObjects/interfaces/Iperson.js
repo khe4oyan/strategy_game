@@ -7,7 +7,6 @@ class IPerson extends IGameObject{
   _maxhp;
   hp;
   isDead;
-  specialData;
 
   constructor(name, modules, img, hp, map_ref, i, j) {
     super(img, i, j, map_ref);
@@ -16,7 +15,6 @@ class IPerson extends IGameObject{
     this._maxhp = hp;
     this.hp = hp;
     this.isDead = false;
-    this.specialData = new Map();
   }
 
   // basic reactions
@@ -36,17 +34,6 @@ class IPerson extends IGameObject{
     if (this.hp > this._maxhp) {
       this.hp = this._maxhp;
     }
-  }
-
-  // special data
-  setSpecialData(key, value) {
-    this.specialData.set(key, value);
-  }
-  getSpecialData(key) {
-    return this.specialData.get(key);
-  }
-  getSpecialAllDatas() {
-    // TODO: [{key, value}]
   }
 };
 
