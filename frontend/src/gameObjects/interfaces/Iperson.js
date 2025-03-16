@@ -23,8 +23,7 @@ class IPerson extends IGameObject{
       this.modules[i].afterMove(this.map_ref);
     }
   }
-  afterAttack() {}
-  afterTakeDamage() {}
+  
   damage(damage) {
     this.hp -= damage;
     

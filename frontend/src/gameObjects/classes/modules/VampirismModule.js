@@ -12,14 +12,6 @@ class VampirismModule extends IModule{
   }
 
   actionWhenSelect(map_ref) {
-    // for (let i = 0; i < map_ref.length; ++i) {
-    //   for (let j = 0; j < map_ref[i].length; ++j) {
-    //     if (map_ref[i][j].person !== null && map_ref[i][j].person.isDead === false) {
-    //       map_ref[i][j].isActiveSquare = true;
-    //     }
-    //   }
-    // }
-
     this.recursionSetActive(map_ref, this.person_ref.i, this.person_ref.j, this.radius);
   }
 

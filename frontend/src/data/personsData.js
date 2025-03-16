@@ -6,8 +6,8 @@ import MonequinPerson from '../gameObjects/classes/persons/MonequinPerson';
 const personsData = [
   MonequinPerson,
   ManPerson,
-  JellyfishPerson,
   RockPerson,
+  JellyfishPerson,
 ];
 
 export default personsData;
