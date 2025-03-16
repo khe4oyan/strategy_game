@@ -20,7 +20,6 @@ export default function PersonChoosingPage() {
   const [persons, setPersons] = useState([]);
   const { map } = useSelector(s => s.mapSlice);
   
-
   const navigate = useNavigate();
   const dispatch = useDispatch();
   
