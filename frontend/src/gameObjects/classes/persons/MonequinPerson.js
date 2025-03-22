@@ -14,8 +14,8 @@ class MonequinPerson extends IPerson {
     this.modules = [
       new modulesData.MoveModule(this, 2),
       new modulesData.AttackModule(this, 50, 6),
-      new modulesData.TeleportModule(this, 4),
-      new modulesData.PotionModule(this, 20, 5, 2),
+      new modulesData.TeleportModule(this, 3),
+      new modulesData.PotionModule(this, 20, 3, 2),
       new modulesData.VampirismModule(this, 10, 1),
     ];
   }
