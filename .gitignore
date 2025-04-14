@@ -7,3 +7,7 @@ frontend/psd/images
 sharp/node_modules
 sharp/outputModules
 sharp/outputPersons
+sharp/outputloadAndFilledPersons
+sharp/outputBuild
+sharp/inputPersonsForBuild
+sharp/inputModulesForBuild
