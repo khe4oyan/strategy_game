@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/strategy_game/static/css/main.d7363f15.css",
-    "main.js": "/strategy_game/static/js/main.44071115.js",
+    "main.css": "/strategy_game/static/css/main.60ce0926.css",
+    "main.js": "/strategy_game/static/js/main.caa90e99.js",
     "static/media/RIP.png": "/strategy_game/static/media/RIP.4166bf416edc71dbf44e.png",
     "static/media/teleport.png": "/strategy_game/static/media/teleport.00cc5994086db1b9c138.png",
     "static/media/rock.png": "/strategy_game/static/media/rock.d674fee019b49a25eddd.png",
@@ -13,11 +13,11 @@
     "static/media/potion.png": "/strategy_game/static/media/potion.c2691787dfe3f1f1c6e4.png",
     "static/media/move.png": "/strategy_game/static/media/move.7a5be3f12b85fcea56e0.png",
     "index.html": "/strategy_game/index.html",
-    "main.d7363f15.css.map": "/strategy_game/static/css/main.d7363f15.css.map",
-    "main.44071115.js.map": "/strategy_game/static/js/main.44071115.js.map"
+    "main.60ce0926.css.map": "/strategy_game/static/css/main.60ce0926.css.map",
+    "main.caa90e99.js.map": "/strategy_game/static/js/main.caa90e99.js.map"
   },
   "entrypoints": [
-    "static/css/main.d7363f15.css",
-    "static/js/main.44071115.js"
+    "static/css/main.60ce0926.css",
+    "static/js/main.caa90e99.js"
   ]
 }
