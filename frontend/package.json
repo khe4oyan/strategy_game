@@ -1,6 +1,6 @@
 {
   "name": "strategy_game_local",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "private": true,
   "homepage": "https://khe4oyan.github.io/strategy_game",
   "dependencies": {

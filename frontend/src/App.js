@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage';
 import PlayPage from './pages/PlayPage';
 import PersonChoosingPage from './pages/PersonChoosingPage';
 import ShowAllGameObjects from "./pages/ShowAllGameObjects";
+import UpdatePlans from './pages/UpdatePlans';
 import NotFoundPage from './pages/NotFoundPage';
 
 // data
@@ -22,6 +23,7 @@ function App() {
         <Route path={routes.PLAY} element={<PlayPage />}/>
         <Route path={routes.PERSON_CHOOSING} element={<PersonChoosingPage />}/>
         <Route path={routes.SHOW_ALL_GAME_OBJECTS} element={<ShowAllGameObjects />}/>
+        <Route path={routes.UPDATE_PLANS} element={<UpdatePlans />}/>
         <Route path={routes.NOT_FOUND} element={<NotFoundPage />}/>
       </Routes>
     </div>

@@ -16,3 +16,27 @@ button {
   background: none;
   outline: none;
 }
+
+.link, a {
+    padding: 10px 15px;
+    display: block;
+    text-decoration: none;
+    text-align: center;
+    color: black;
+    font-weight: bold;
+    border: 1px solid black;
+    border-radius: 10px;
+    transition: .3s;
+    box-shadow: 0px 0px 0 black;
+
+    &:hover {
+      transform: translateY(-5px);
+      box-shadow: 0px 5px 0 black;
+    }
+
+    &:active{
+      transition: .1s;
+      transform: translateY(-2px);
+      box-shadow: 0px 2px 0;
+    }
+  }
