@@ -1,7 +1,5 @@
 # frontend
-frontend/node_modules
-frontend/build
-frontend/psd/images
+*/*/node_modules
 
 # sharp
 sharp/node_modules
