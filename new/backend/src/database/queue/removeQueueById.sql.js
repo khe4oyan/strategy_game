@@ -1,11 +1,11 @@
 // mysql
 import pool from "../../config/mysql.js";
 
-export default async function removeQueue(playerId) {
+export default async function removeQueueById(id) {
   try {
     // remove player from queue
-    const [rows] = await pool.execute("DELETE FROM queue WHERE playerId = ?", [playerId]);
-    
+    const [rows] = await pool.execute("DELETE FROM queue WHERE ID = ?", [id]);
+
     if (rows.affectedRows > 0) {
       return true;
     } else {

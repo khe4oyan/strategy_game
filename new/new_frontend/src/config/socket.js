@@ -3,13 +3,14 @@ import { io } from "socket.io-client";
 class Socket {
   static socket = null;
 
-  static connect(onConnect) {
+  static connect(onConnect = () => { }, onError = () => { }) {
     if (Socket.socket !== null) { return }
     Socket.socket = io("http://192.168.0.104:5000");
 
     Socket.socket.on("connect_error", (error) => {
       console.error("Connection failed:", error.message);
       Socket.disconnect();
+      onError();
     });
 
     Socket.socket.on("connect", () => {

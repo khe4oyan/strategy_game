@@ -4,14 +4,13 @@ import Person from "./Person.js";
 
 // db
 import gameInitSQL from "../database/game/gameInit.sql.js";
+import removeQueueById from '../database/queue/removeQueueById.sql.js';
 
 // config 
 import characters from "../config/characters.js";
 
 class Room {
   constructor(socket, p1, p2, p1Persons, p2Persons, removeQueueId) {
-    console.log("====== [Room constructor]:", p1, p2);
-
     this.p1 = p1;
     this.p2 = p2;
     this.turn = p1;
@@ -31,30 +30,28 @@ class Room {
 
   async #afterCreateRoom(socket, removeQueueId) {
     const result = await gameInitSQL(this);
-    
-    await pool.execute("DELETE FROM queue WHERE id = ?", [removeQueueId]);
 
-    if (result) {
-      const gameDataJSON = JSON.stringify({
-        id: result.roomId,
-        board: this.board,
-        players: {
-          p1: this.p1,
-          p2: this.p2,
-        },
-        turn: this.turn,
-      });
-
-      const opponentId = ((socket.id === this.p1) ? this.p2 : this.p1);
-
-      // socket.emit("gameFoundAndStart", gameDataJSON);
-      // io.to(opponentId).emit("gameFoundAndStart", gameDataJSON);
-
-      io.to(this.p1).emit("gameFoundAndStart", gameDataJSON);
-      io.to(this.p2).emit("gameFoundAndStart", gameDataJSON);
-    } else {
-      socket.emit("message", "Cant created room");
+    if (!result) {
+      socket.emit("message", "Cant created room [1]");
+      return;
     }
+
+    const deleteQueueResult = await removeQueueById(removeQueueId);
+
+    if (!deleteQueueResult) {
+      socket.emit("message", "Cant created room [2]");
+      return;
+    }
+
+    const gameData = {
+      id: result.roomId,
+      board: this.board,
+      opponentId: null,
+      turn: this.turn,
+    };
+
+    io.to(this.p1).emit("gameFoundAndStart", JSON.stringify({...gameData, opponentId: socket.id === this.p1 ? this.p2 : this.p1}));
+    io.to(this.p2).emit("gameFoundAndStart", JSON.stringify({...gameData, opponentId: socket.id !== this.p1 ? this.p2 : this.p1}));
   }
 
   #initBoard() {

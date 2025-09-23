@@ -13,9 +13,9 @@ export default async function selectPerson(socket, inputData) {
     const parseData = JSON.parse(inputData);
     const from = parseData.from;
     const playerId = socket.id;
-
+    
     // check room
-    const room = getUnfinishedRoomSQL(playerId);
+    const room = await getUnfinishedRoomSQL(playerId);
 
     if (!room) {
       socket.emit("message", "Room not found");

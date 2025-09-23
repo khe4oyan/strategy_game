@@ -7,6 +7,7 @@ import addQueueSQL from '../database/queue/addQueue.sql.js';
 import removeQueueSQL from '../database/queue/removeQueue.sql.js';
 import endGameSQL from '../database/game/gameEnd.sql.js';
 import getUnfinishedRoomSQL from '../database/game/getUnfinishedRoom.sql.js'
+import getuserByIdSQL from "../database/queue/getUserById.sql.js"
 
 class Game {
   /**
@@ -16,6 +17,21 @@ class Game {
   */
   static async searchGame(socket, playerPersons) {
     const playerId = socket.id;
+
+    const isPlayerAlreadyInGame = await getUnfinishedRoomSQL(playerId)
+
+    if (isPlayerAlreadyInGame) {
+      socket.emit("message", "You already in game");
+      return;
+    }
+
+    const isUserInQueue = await getuserByIdSQL(playerId);
+
+    if (isUserInQueue) {
+      socket.emit("message", "You already searching game");
+      return;
+    }
+
     const isOtherPlayerWaitingMatch = await popQueueSQL();
 
     if (isOtherPlayerWaitingMatch) {
@@ -42,16 +58,22 @@ class Game {
     
     try {
       const room = await getUnfinishedRoomSQL(playerId);
-      const result = await endGameSQL(room.id);
+
+      if (!room) {
+        socket.emit("message", "cant end game");
+        return;
+      }
+
+      const result = await endGameSQL(room.ID, (playerId === room.player_1 ? room.player_2 : room.player_1));
       
       if (result) {
-        io.to(playerId === room.p1 ? room.p2 : room.p1).emit("gameEndResult", message);
-        socket.emit("gameEndResult", message);
+        io.to(room.player_1).emit("gameEndResult", message);
+        io.to(room.player_2).emit("gameEndResult", message);
       } else {
         socket.emit("message", "Cant end game");
       }
     } catch (error) {
-      console.log("[1] del session error");
+      console.log("[1] del session error", error);
     }
   }
 };

@@ -3,6 +3,7 @@ import express from 'express'
 import cors from 'cors'
 import http from 'http';
 import { Server } from "socket.io"
+import "colors";
 
 // controllers
 import cancelPlayListener from './listeners/cancelPlay.listener.js'
@@ -28,6 +29,8 @@ io.on("connection", async (socket) => {
   console.log("--------[connect]");
   console.log("A user connected", socket.id);
 
+  socket.emit("getUserId", socket.id);
+
   const withSocket = (handler) => {
     return (...args) => {
       return handler(socket, ...args);
@@ -45,5 +48,16 @@ io.on("connection", async (socket) => {
 
 server.listen(5000, () => {
   console.clear();
-  console.log("Server is Running");
+  console.log("\n\n===========================");
+  console.log("===========================");
+  console.log("===========================");
+  console.log("===========================");
+  console.log("===========================");
+  console.log("===========================");
+  console.log("===========================");
+  console.log("===========================");
+  console.log("===========================");
+  console.log("===========================");
+  console.log("\nServer is Running");
+  console.log("\n===========================");
 });

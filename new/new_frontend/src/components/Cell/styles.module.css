@@ -1,5 +1,5 @@
 .root {
-  --size: 100px;
+  --size: 60px;
   width: var(--size);
   height: var(--size);
   background-color: white;

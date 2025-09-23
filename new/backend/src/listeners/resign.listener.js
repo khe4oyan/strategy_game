@@ -13,22 +13,24 @@ export default async function resignListener(socket) {
     return;
   }
 
-  const result = await gameEndSQL(room.id);
+  const result = await gameEndSQL(room.ID, (socket.id === room.player_1 ? room.player_2 : room.player_1));
 
   switch (result) {
     case 0: {
       socket.emit("message", "Room not found");
       break;
     }
+    
     case 1: {
       socket.emit("gameEndResult", "Opponent Won! You resign");
-      if (room.p1 === socket.id) {
-        io.to(room.p2).emit("gameEndResult", "You Won! Opponent resign");
+      if (room.player_1 === socket.id) {
+        io.to(room.player_2).emit("gameEndResult", "You Won! Opponent resign");
       } else {
-        io.to(room.p1).emit("gameEndResult", "You Won! Opponent resign");
+        io.to(room.player_1).emit("gameEndResult", "You Won! Opponent resign");
       }
       break;
     }
+
     case 2: {
       socket.emit("message", "Game not ended");
       break;

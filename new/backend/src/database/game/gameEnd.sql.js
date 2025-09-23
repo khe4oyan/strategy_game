@@ -5,25 +5,23 @@ import pool from "../../config/mysql.js";
  * 
  * @param roomId - room SQL id
  */
-export default async function gameEnd(roomId) {
-  // change room status to finished
-  // set board to null (for memory optimize)
-  // if game is with unregistered users - hide it. (in feature - delete)
-
+export default async function gameEnd(roomId, winnerId) {
   try {
     const [rows] = await pool.execute("SELECT * FROM room WHERE ID = ?", [roomId]);
 
     if (rows.length > 0) {
-      const [rows_2] = await pool.execute("UPDATE room SET board = null, isGameFinished = 1 WHERE ID = ?", [roomId]);
+      const [rows_2] = await pool.execute("UPDATE room SET board = NULL, isGameFinished = 1, winnerId = ? WHERE ID = ?", [winnerId, roomId]);
       if (rows_2.affectedRows > 0) {
         return 1;
       } else {
+        console.log(rows_2);
         return 2;
       }
     } else {
       return 0;
     }
   } catch (error) {
+    console.log(error);
     return null;
   }
 }

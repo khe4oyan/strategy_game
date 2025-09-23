@@ -11,6 +11,8 @@ export default async function play(socket, inputData) {
   console.log('-------[play]');
   console.log("id", socket.id);
 
+  socket.emit("getUserId", socket.id);
+
   try {
     const selectedPersons = JSON.parse(inputData);
 
@@ -28,7 +30,7 @@ export default async function play(socket, inputData) {
 
     // check persons count
     if (selectedPersons.length === 0 || selectedPersons.length > 4) {
-      socket.emit("message", "[2] Max persons count only can be from 1 to 4");
+      socket.emit("message", "[2] Max persons count only can be from 1 to 4" + ` your is: ${selectedPersons.length}`);
       socket.emit("showPersons", JSON.stringify(personsCreate(characters)));
       return;
     }

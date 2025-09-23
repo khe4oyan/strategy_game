@@ -1,9 +1,9 @@
 .root {
   display: grid;
   grid-template-columns: repeat(8, 1fr);
-  gap: 3px;
+  gap: 1px;
   width: fit-content;
-  border: 3px solid gray;
+  border: 2px solid gray;
   background-color: gray;
 }
 
