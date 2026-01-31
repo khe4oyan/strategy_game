@@ -1,7 +1,5 @@
 # Fullstack Modular Strategy Game ⚔️
 
-[![Telegram Devlog](https://img.shields.io/badge/Devlog-Telegram-blue?logo=telegram)](https://t.me/+t33m79WtNnw4MWUy)
-
 A real-time multiplayer tactical strategy game built with a modular ability system. This project features a robust Node.js backend handling game logic, a React frontend for the interface, and Socket.io for seamless real-time synchronization between players.
 
 
@@ -66,8 +64,3 @@ A modern React application.
     npm install
     npm start
   ```
-
-## 📢 Stay Updated
-If you're interested in the development process, I share regular updates, technical challenges, and upcoming features in my Telegram Devlog.
-
-👉 **Join here:** [Devlog: Strategy Game](https://t.me/+t33m79WtNnw4MWUy)
