@@ -47,17 +47,5 @@ io.on("connection", async (socket) => {
 });
 
 server.listen(5000, () => {
-  console.clear();
-  console.log("\n\n===========================");
-  console.log("===========================");
-  console.log("===========================");
-  console.log("===========================");
-  console.log("===========================");
-  console.log("===========================");
-  console.log("===========================");
-  console.log("===========================");
-  console.log("===========================");
-  console.log("===========================");
   console.log("\nServer is Running");
-  console.log("\n===========================");
 });
