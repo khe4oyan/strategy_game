@@ -29,13 +29,13 @@ A real-time multiplayer tactical strategy game built with a modular ability syst
 
 The project is divided into two main parts:
 
-### 1. Backend (`/backend`)
+### 1. Backend (`/server`)
 Handles the "Source of Truth" for the game state.
 - **`classes/`**: Core entities like `Room`, `Person`, and `BoardCell`.
 - **`listeners/`**: Event handlers for socket actions (`play`, `useModule`, `resign`).
 - **`database/`**: SQL-driven logic for matchmaking and session recovery.
 
-### 2. Frontend (`/new_frontend`)
+### 2. Frontend (`/client`)
 A modern React application.
 - **`components/`**: Modular UI components (Board, Cell, SelectPersons).
 - **`store/`**: Centralized game state management.
@@ -62,7 +62,7 @@ A modern React application.
 
 3. **Setup Frontend:**
   ```bash
-    cd ../new_frontend
+    cd ../client
     npm install
     npm start
   ```
